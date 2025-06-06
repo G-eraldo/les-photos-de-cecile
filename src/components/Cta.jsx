@@ -19,7 +19,7 @@ export default function Cta() {
         venir.
       </CardDescription>
       <div className="flex justify-center">
-        <Button className="bg-[#9e8b8b] text-lg max-w-xs hover:bg-background">
+        <Button className=" text-lg max-w-xs">
           <Link href="/tirages-photo">Developper vos photos</Link>
         </Button>
       </div>

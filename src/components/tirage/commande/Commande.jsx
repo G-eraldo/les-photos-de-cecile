@@ -1,27 +1,27 @@
 "use client";
 
-import { Button } from "@/components/ui/button";
 import { Card, CardDescription, CardTitle } from "@/components/ui/card";
-
-import { useFormStatus } from "react-dom";
-import PersonnalInfo from "./PersonnalInfo";
+import { submitPhotoForm } from "@/lib/uploadAction";
+import { useActionState, useEffect } from "react";
+import { toast } from "sonner";
 import CommandeInfo from "./CommandeInfo";
-
-function SubmitButton() {
-  const { pending } = useFormStatus();
-
-  return (
-    <Button
-      type="submit"
-      disabled={pending}
-      className="bg-[#9e8b8b] hover:bg-hover-btn"
-    >
-      {pending ? "Envoi en cours..." : "Payer"}
-    </Button>
-  );
-}
+import PersonnalInfo from "./PersonnalInfo";
+const initialState = {
+  success: null,
+  message: null,
+};
 
 export default function Commande() {
+  const [state, formAction] = useActionState(submitPhotoForm, initialState);
+  useEffect(() => {
+    if (state.message) {
+      if (state.success) {
+        toast.success(state.message); // Toast de succès
+      } else {
+        toast.error(state.message); // Toast d'erreur
+      }
+    }
+  }, [state]); // Exécuter l'effet uniquement lorsque l'état change
   return (
     <Card className="max-w-5xl mx-auto p-6 mt-32">
       <CardTitle className="text-2xl font-bold mb-4 text-[#613213]">
@@ -30,16 +30,12 @@ export default function Commande() {
       <CardDescription className="text-[#9e8b8b]">
         Tirage d'art sur papier traditionnel
       </CardDescription>
-      <form className="space-y-6 text-[#9e8b8b] mt-6">
+      <form action={formAction} className="space-y-6 text-[#9e8b8b] mt-6">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {/* Personal Information Section */}
           <PersonnalInfo />
           {/* Order Details Section */}
           <CommandeInfo />
-        </div>
-
-        <div className="flex justify-center mt-6">
-          <SubmitButton />
         </div>
       </form>
     </Card>

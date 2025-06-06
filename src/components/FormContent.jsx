@@ -5,10 +5,10 @@ import { Card, CardDescription, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
+import { submitForm } from "@/lib/sendEmail";
 import { useActionState, useEffect } from "react";
 import { useFormStatus } from "react-dom";
 import { toast } from "sonner";
-import { submitForm } from "@/lib/sendEmail";
 
 const initialState = {
   success: null,
@@ -19,11 +19,7 @@ function SubmitButton() {
   const { pending } = useFormStatus();
 
   return (
-    <Button
-      type="submit"
-      disabled={pending}
-      className="bg-[#9e8b8b] hover:bg-hover-btn"
-    >
+    <Button type="submit" disabled={pending} className="">
       {pending ? "Envoi en cours..." : "Envoyer"}
     </Button>
   );

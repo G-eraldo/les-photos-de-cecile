@@ -37,7 +37,7 @@ export default function MapContent() {
         </div>
         <div className="md:w-1/2 space-y-6">
           <CardContent className="text-[#9e8b8b] font-playfair text-lg">
-            <Button className="w-full bg-[#9e8b8b] hover:bg-background mt-3">
+            <Button className="w-full mt-3">
               <Link href="/contact" className="w-full text-xl">
                 Contactez-moi
               </Link>
