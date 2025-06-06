@@ -61,7 +61,14 @@ export default function page() {
                           {prestas.name}
                         </AlertDialogTitle>
                         <div className="space-y-4">
-                          <AlertDialogDescription className="text-[#9e8b8b] border-b-2 pb-4">
+                          <AlertDialogDescription
+                            className={cn(
+                              "text-[#9e8b8b] pb-4",
+                              prestas.forfait &&
+                                prestas.forfait.length > 0 &&
+                                "border-b-2"
+                            )}
+                          >
                             {prestas.condition}
                           </AlertDialogDescription>
                           <div className="grid grid-cols-3 gap-2 text-center">
@@ -76,7 +83,7 @@ export default function page() {
                             </AlertDialogDescription>
                           </div>
                           <div className="grid grid-cols-3 gap-2 text-center">
-                            <AlertDialogDescription className="text-[#9e8b8b] border-r-2  font-medium">
+                            <AlertDialogDescription className="text-[#9e8b8b] border-r-2 font-medium">
                               {prestas.forfait2}
                             </AlertDialogDescription>
                             <AlertDialogDescription className="text-[#9e8b8b] border-r-2  font-medium">
@@ -86,7 +93,14 @@ export default function page() {
                               {prestas.forfaitphoto2}
                             </AlertDialogDescription>
                           </div>
-                          <AlertDialogDescription className="text-[#9e8b8b] border-t-2 pt-4">
+                          <AlertDialogDescription
+                            className={cn(
+                              "text-[#9e8b8b]",
+                              prestas.forfait &&
+                                prestas.forfait.length > 0 &&
+                                "border-t-2 pt-4"
+                            )}
+                          >
                             {prestas.detail}
                           </AlertDialogDescription>
                           <AlertDialogDescription className="text-[#9e8b8b] pt-4">
