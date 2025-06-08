@@ -1,17 +1,16 @@
 "use client";
-import {
-  AlertDialog,
-  AlertDialogAction,
-  AlertDialogCancel,
-  AlertDialogContent,
-  AlertDialogDescription,
-  AlertDialogFooter,
-  AlertDialogHeader,
-  AlertDialogTitle,
-  AlertDialogTrigger,
-} from "@/components/ui/alert-dialog";
-import { buttonVariants } from "@/components/ui/button";
+import { Button, buttonVariants } from "@/components/ui/button";
 import { Card, CardContent, CardTitle } from "@/components/ui/card";
+import {
+  Dialog,
+  DialogClose,
+  DialogContent,
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
 import { presta } from "@/lib/dataPresta";
 import { cn } from "@/lib/utils";
 import { Mail } from "lucide-react";
@@ -53,19 +52,19 @@ export default function Prestation() {
                   </CardContent>
                 </div>
                 <div className="mt-auto flex justify-center">
-                  <AlertDialog>
-                    <AlertDialogTrigger
+                  <Dialog>
+                    <DialogTrigger
                       className={cn(buttonVariants(), "cursor-pointer")}
                     >
                       Détails
-                    </AlertDialogTrigger>
-                    <AlertDialogContent>
-                      <AlertDialogHeader>
-                        <AlertDialogTitle className="text-[#613213] text-2xl font-bold mb-4">
+                    </DialogTrigger>
+                    <DialogContent>
+                      <DialogHeader>
+                        <DialogTitle className="text-[#613213] text-2xl font-bold mb-4">
                           {prestas.name}
-                        </AlertDialogTitle>
+                        </DialogTitle>
                         <div className="space-y-4">
-                          <AlertDialogDescription
+                          <DialogDescription
                             className={cn(
                               "text-[#9e8b8b]",
                               prestas.forfait1 &&
@@ -74,30 +73,30 @@ export default function Prestation() {
                             )}
                           >
                             {prestas.info}
-                          </AlertDialogDescription>
+                          </DialogDescription>
                           <div className="grid grid-cols-3 gap-2 text-center">
                             {prestas.forfait1 &&
                               prestas.forfait1.map((forfait) => (
-                                <AlertDialogDescription
+                                <DialogDescription
                                   key={forfait}
                                   className="text-[#9e8b8b] border-r-2 font-medium"
                                 >
                                   {forfait}
-                                </AlertDialogDescription>
+                                </DialogDescription>
                               ))}
                           </div>
                           <div className="grid grid-cols-3 gap-2 text-center">
                             {prestas.forfait2 &&
                               prestas.forfait2.map((forfait) => (
-                                <AlertDialogDescription
+                                <DialogDescription
                                   key={forfait}
                                   className="text-[#9e8b8b] border-r-2 font-medium"
                                 >
                                   {forfait}
-                                </AlertDialogDescription>
+                                </DialogDescription>
                               ))}
                           </div>
-                          <AlertDialogDescription
+                          <DialogDescription
                             className={cn(
                               "text-[#9e8b8b]",
                               prestas.forfait2 &&
@@ -114,34 +113,42 @@ export default function Prestation() {
                                   {restriction}
                                 </li>
                               ))}
-                          </AlertDialogDescription>
+                          </DialogDescription>
 
-                          {prestas.contact && prestas.contact.length > 0 ? (
-                            <AlertDialogDescription className="text-[#9e8b8b] flex flex-col gap-6 items-start">
-                              {prestas.contact}
-
-                              <AlertDialogAction asChild>
+                          {prestas.contact && (
+                            <DialogDescription className="text-[#9e8b8b] flex flex-col gap-6 items-start">
+                              {Array.isArray(prestas.contact) ? (
+                                prestas.contact.map((contact, index) => (
+                                  <li key={index} className="list-none">
+                                    {contact}
+                                  </li>
+                                ))
+                              ) : (
+                                <span>{prestas.contact}</span>
+                              )}
+                              <Button asChild>
                                 <Link href="/contact">
                                   <Mail />
                                   contact
                                 </Link>
-                              </AlertDialogAction>
-                            </AlertDialogDescription>
-                          ) : null}
+                              </Button>
+                            </DialogDescription>
+                          )}
 
-                          {prestas.forfait1 && prestas.forfait1.length > 0 ? (
+                          {prestas.restriction &&
+                          prestas.restriction.length > 0 ? (
                             <Reservation />
                           ) : null}
                         </div>
-                      </AlertDialogHeader>
+                      </DialogHeader>
 
-                      <AlertDialogFooter>
-                        <AlertDialogCancel className="cursor-pointer">
-                          Fermer
-                        </AlertDialogCancel>
-                      </AlertDialogFooter>
-                    </AlertDialogContent>
-                  </AlertDialog>
+                      <DialogFooter>
+                        <DialogClose asChild>
+                          <Button>Fermer</Button>
+                        </DialogClose>
+                      </DialogFooter>
+                    </DialogContent>
+                  </Dialog>
                 </div>
               </div>
             </Card>

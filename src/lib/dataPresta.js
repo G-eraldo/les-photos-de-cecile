@@ -79,13 +79,13 @@ export const presta = [
     info: "Pour les baptêmes ou les anniversaires.",
     forfait1: ["Séance 3H", "350€", "65 photos"],
     forfait2: ["Séance 4H", "500€", "85 photos"],
-    restriction: [
+    contact: [
       "Le prix comprend la retouche artistique et le traitement des photos.",
       "Pour des séances au-delà de 20km d'Amiens, un supplément sera facturé pour les frais de transport.",
       "Possibilité de choisir la galerie complète en complément de 200€.",
       "Les photos seront disponibles en HD dans un délai de 3 semaines via un lien de téléchargement.",
+      "Pour toute autre demande, n'hésitez pas à me contacter.",
     ],
-    contact: "Pour toute autre demande, n'hésitez pas à me contacter.",
   },
   {
     id: 6,
@@ -101,13 +101,13 @@ export const presta = [
       "900€",
       "photos illimitées",
     ],
-    restriction: [
+    contact: [
       "Si vous souhaitez que je reste jusqu'à la pièce montée il faudra compter un supplément de 200€.",
       "Le prix comprend la retouche artistique et le traitement des photos.",
       "Pour des séances au-delà de 20km d'Amiens, un supplément sera facturé pour les frais de transport.",
       "Les photos seront disponibles en HD dans un délai de 1 mois. Elles seront envoyées sur une clé USB directement à votre domicile.",
+      "Pour toute autre demande, n'hésitez pas à me contacter.",
     ],
-    contact: "Pour toute autre demande, n'hésitez pas à me contacter.",
   },
   {
     id: 7,
@@ -133,12 +133,11 @@ export const presta = [
       "Je vous accompagne et vous guide afin d'obtenir des portraits authentiques pour vos expériences professionnelles.",
     price: "(Devis personnalisé)",
     src: "/portrait.png",
-    restriction: [
+    contact: [
       "Avant de réaliser la séance il est important que nous échangions par rapport à vos attentes et votre métier.",
       "Un devis personnalisé vous sera proposé après cet entretien.",
-    ],
-    contact:
       "Je vous invite à remplir le formulaire de contact pour que je puisse en savoir plus.",
+    ],
   },
   {
     id: 9,
@@ -146,9 +145,9 @@ export const presta = [
     description: "Mise en valeur de votre entreprise et de vos réalisations. ",
     price: "(Devis personnalisé)",
     src: "/culinaire.png",
-    restriction: [
+    contact: [
       "Les tarifs se font sur devis après un entretien téléphonique. Cela permet de répondre au mieux a vos attentes.",
+      "Je vous invite à remplir le formulaire de contact. ",
     ],
-    contact: "Je vous invite à remplir le formulaire de contact. ",
   },
 ];
