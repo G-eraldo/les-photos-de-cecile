@@ -1,9 +1,13 @@
-import Cta from "@/components/Cta";
+import Accueil from "@/components/accueil/Accueil";
+import Cta from "@/components/accueil/Cta";
+import Prestation from "@/components/accueil/Prestation";
 
 export default function Home() {
   return (
-    <div className="m-10 flex gap-8">
+    <div className="">
+      <Accueil />
       <Cta />
+      <Prestation />
     </div>
   );
 }

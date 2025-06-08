@@ -10,7 +10,7 @@ export default function ProposContent() {
         <CardDescription className="w-1/2 h-[500px]">
           <img
             src="/profil.png"
-            className="w-full h-full object-cover object-top rounded-lg mt-5"
+            className="w-full h-full object-cover object-top rounded-lg mt-5 shadow-2xl"
           />
         </CardDescription>
         <CardContent className="w-1/2 text-[#9e8b8b] leading-8 font-playfair py-8 text-lg ">
