@@ -1,9 +1,8 @@
 "use client";
 import Link from "next/link";
 
-import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
-import { Menu, ShoppingBasket, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { useEffect, useState } from "react";
 
 const menuItems = [
@@ -60,7 +59,7 @@ export default function Navbar() {
 
             <div
               className={`absolute size-fit lg:block text-xl transition-all duration-1000 ${
-                isScrolled ? "right-10" : "inset-0 m-auto pl-24"
+                isScrolled ? "right-10" : "inset-0 m-auto pl-52"
               }`}
             >
               <ul className="flex gap-8 text-lg ">
@@ -91,16 +90,6 @@ export default function Navbar() {
                     </li>
                   ))}
                 </ul>
-              </div>
-              <div className="flex w-full flex-col space-y-3 sm:flex-row sm:gap-3 sm:space-y-0 md:w-fit">
-                <Button
-                  variant="link"
-                  className={cn(isScrolled && "lg:hidden")}
-                >
-                  <Link href="#">
-                    <ShoppingBasket />
-                  </Link>
-                </Button>
               </div>
             </div>
           </div>

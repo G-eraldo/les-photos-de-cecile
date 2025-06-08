@@ -9,10 +9,11 @@ import {
   AlertDialogTitle,
   AlertDialogTrigger,
 } from "@/components/ui/alert-dialog";
-import { buttonVariants } from "@/components/ui/button";
+import { Button, buttonVariants } from "@/components/ui/button";
 import { Card, CardContent, CardTitle } from "@/components/ui/card";
 import { presta } from "@/lib/dataPresta";
 import { cn } from "@/lib/utils";
+import Link from "next/link";
 
 export default function page() {
   return (
@@ -63,58 +64,70 @@ export default function page() {
                         <div className="space-y-4">
                           <AlertDialogDescription
                             className={cn(
-                              "text-[#9e8b8b] pb-4",
-                              prestas.forfait &&
-                                prestas.forfait.length > 0 &&
-                                "border-b-2"
+                              "text-[#9e8b8b]",
+                              prestas.forfait1 &&
+                                prestas.forfait1.length > 0 &&
+                                "border-b-2 pb-4"
                             )}
                           >
-                            {prestas.condition}
+                            {prestas.info}
                           </AlertDialogDescription>
                           <div className="grid grid-cols-3 gap-2 text-center">
-                            <AlertDialogDescription className="text-[#9e8b8b] border-r-2 font-medium">
-                              {prestas.forfait}
-                            </AlertDialogDescription>
-                            <AlertDialogDescription className="text-[#9e8b8b] border-r-2  font-medium">
-                              {prestas.forfait1}
-                            </AlertDialogDescription>
-                            <AlertDialogDescription className="text-[#9e8b8b] font-medium">
-                              {prestas.forfaitphoto}
-                            </AlertDialogDescription>
+                            {prestas.forfait1 &&
+                              prestas.forfait1.map((forfait) => (
+                                <AlertDialogDescription
+                                  key={forfait}
+                                  className="text-[#9e8b8b] border-r-2 font-medium"
+                                >
+                                  {forfait}
+                                </AlertDialogDescription>
+                              ))}
                           </div>
                           <div className="grid grid-cols-3 gap-2 text-center">
-                            <AlertDialogDescription className="text-[#9e8b8b] border-r-2 font-medium">
-                              {prestas.forfait2}
-                            </AlertDialogDescription>
-                            <AlertDialogDescription className="text-[#9e8b8b] border-r-2  font-medium">
-                              {prestas.forfait2prix}
-                            </AlertDialogDescription>
-                            <AlertDialogDescription className="text-[#9e8b8b] font-medium">
-                              {prestas.forfaitphoto2}
-                            </AlertDialogDescription>
+                            {prestas.forfait2 &&
+                              prestas.forfait2.map((forfait) => (
+                                <AlertDialogDescription
+                                  key={forfait}
+                                  className="text-[#9e8b8b] border-r-2 font-medium"
+                                >
+                                  {forfait}
+                                </AlertDialogDescription>
+                              ))}
                           </div>
                           <AlertDialogDescription
                             className={cn(
                               "text-[#9e8b8b]",
-                              prestas.forfait &&
-                                prestas.forfait.length > 0 &&
+                              prestas.forfait2 &&
+                                prestas.forfait2.length > 0 &&
                                 "border-t-2 pt-4"
                             )}
                           >
-                            {prestas.detail}
+                            {prestas.restriction &&
+                              prestas.restriction.map((restriction) => (
+                                <li
+                                  className="pb-4 list-none"
+                                  key={restriction}
+                                >
+                                  {restriction}
+                                </li>
+                              ))}
                           </AlertDialogDescription>
-                          <AlertDialogDescription className="text-[#9e8b8b] pt-4">
-                            {prestas.retouche}
-                          </AlertDialogDescription>
-                          <AlertDialogDescription className="text-[#9e8b8b] pt-2">
-                            {prestas.restriction}
-                          </AlertDialogDescription>
-                          <AlertDialogDescription className="text-[#9e8b8b]  pt-2">
-                            {prestas.info}
-                          </AlertDialogDescription>
-                          <AlertDialogDescription className="text-[#9e8b8b] pt-2">
-                            {prestas.delivre}
-                          </AlertDialogDescription>
+
+                          {prestas.contact && prestas.contact.length > 0 ? (
+                            <AlertDialogDescription className="text-[#9e8b8b] flex flex-col gap-6 items-start">
+                              {prestas.contact}
+
+                              <Button className="">
+                                <Link href="/contact">contact</Link>
+                              </Button>
+                            </AlertDialogDescription>
+                          ) : null}
+
+                          {prestas.forfait1 && prestas.forfait1.length > 0 ? (
+                            <Button>
+                              <Link href="/">Réserver un crenau</Link>
+                            </Button>
+                          ) : null}
                         </div>
                       </AlertDialogHeader>
 

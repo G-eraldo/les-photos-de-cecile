@@ -5,12 +5,16 @@ export const presta = [
     description: "Immortalisez les premiers sourires de vos bébés.",
     price: "A partir de 180€",
     src: "/naissance.png",
-    forfait: "forfait 1 150euro",
-    restriction:
-      "Pour des séances au-delà de 20km d'Amiens, un supplément sera facturé pour les frais de transport (hors séance bord de mer).",
-    info: "Il est possible d'ajouter des photos à 10€ l'unité.",
-    delivre:
+    info: "Afin de s'adapter au besoin de bébé, il faut compter 2 à 3h pour une séance.",
+    forfait1: ["Séance bébé seul & parents", "180€", "10 photos"],
+    forfait2: ["Séance bébé seul & parents", "230€", "15 photos"],
+    restriction: [
+      "Le prix comprend la retouche artistique et le traitement des photos.",
+      "Je me déplace chez vous, avec du matériel (paniers, duvets, coussins, linges ...) et des décors.",
+      "Pour des séances au-delà de 20km d'Amiens, un supplément sera facturé pour les frais de transport.",
+      "Vous en voulez toujours plus ? Vous avez la possibilité d'ajouter des photos à 10€ l'unité. ",
       "Les photos seront disponibles en HD dans un délai de 3 semaines via un lien de téléchargement.",
+    ],
   },
   {
     id: 2,
@@ -18,7 +22,17 @@ export const presta = [
     description: "Gardez des souvenirs inoubliables de votre grossesse.",
     price: "A partir de 150€",
     src: "/grossesse.png",
-    forfait: "forfait 2 50euro",
+    info: "La séance se déroule en intérieur ou en extérieur selon vos envies.",
+    forfait1: ["Forfait 1", "150€", "10 photos"],
+    forfait2: ["Forfait 2", "200€", "15 photos"],
+    restriction: [
+      "Le prix comprend la retouche artistique et le traitement des photos.",
+      "Nous avons la possibilité d'aller le long de la mer au coucher ou au lever du soleil pour un supplément de 30€.",
+      "Je propose 3 robes de grossesse (crème, rouille et rose poudré) en complément de 15€.",
+      "Pour des séances au-delà de 20km d'Amiens, un supplément sera facturé pour les frais de transport (hors séance bord de mer).",
+      "Il est possible d'ajouter des photos à 10€ l'unité.",
+      "Les photos seront disponibles en HD dans un délai de 3 semaines via un lien de téléchargement.",
+    ],
   },
   {
     id: 3,
@@ -26,6 +40,16 @@ export const presta = [
     description: "Figez les moments de vie de façon authentique et naturelle.",
     price: "A partir de 150€",
     src: "/couple.png",
+    info: "La séance se réalise en intérieur ou en extérieur, selon vos envies (et parfois la saison).",
+    forfait1: ["Forfait 1", "150€", "10 photos"],
+    forfait2: ["Forfait 2", "200€", "15 photos"],
+    restriction: [
+      "Le prix comprend la retouche artistique et le traitement des photos.",
+      "Pour des séances au-delà de 20km d'Amiens, un supplément sera facturé pour les frais de transport.",
+      "Il faut compter environ 1h / 1h30 pour une séance. ",
+      "Vous en souhaitez davantage ? il est possible d'ajouter des photos à 10€ l'unité. ",
+      "Les photos seront disponibles en HD dans un délai de 3 semaines via un lien de téléchargement.",
+    ],
   },
   {
     id: 4,
@@ -34,6 +58,17 @@ export const presta = [
       "Parce que nos boules de poils ont le droit aussi à leur séance photo !",
     price: "A partir de 90€",
     src: "/animaux.png",
+    info: "Pour nos amis poilus et leurs parents !",
+    forfait1: ["Forfait 1", "90€", "5 photos"],
+    forfait2: ["Forfait 2", "150€", "10 photos"],
+    restriction: [
+      "Le prix comprend la retouche artistique et le traitement des photos.",
+      "Il faut compter environ 1h / 1h30 pour une séance.",
+      "La séance peut se réaliser en intérieur ou en éxterieur.",
+      "Pour des séances au-delà de 20km d'Amiens, un supplément sera facturé pour les frais de transport.",
+      "Vous n'en n'avez pas assez ? il est possible d'ajouter des photos à 10€ l'unité.",
+      "Les photos seront disponibles en HD dans un délai de 3 semaines via un lien de téléchargement.",
+    ],
   },
   {
     id: 5,
@@ -41,6 +76,16 @@ export const presta = [
     description: "Capturez les moments précieux de vos enfants.",
     price: "A partir de 350€, devis sur mesure ",
     src: "/bapteme.png",
+    info: "Pour les baptêmes ou les anniversaires.",
+    forfait1: ["Séance 3H", "350€", "65 photos"],
+    forfait2: ["Séance 4H", "500€", "85 photos"],
+    restriction: [
+      "Le prix comprend la retouche artistique et le traitement des photos.",
+      "Pour des séances au-delà de 20km d'Amiens, un supplément sera facturé pour les frais de transport.",
+      "Possibilité de choisir la galerie complète en complément de 200€.",
+      "Les photos seront disponibles en HD dans un délai de 3 semaines via un lien de téléchargement.",
+    ],
+    contact: "Pour toute autre demande, n'hésitez pas à me contacter.",
   },
   {
     id: 6,
@@ -49,6 +94,20 @@ export const presta = [
       'Tout simplement car c\'est le "Plus beau jour de votre vie". ',
     price: "A partir de 600€, devis sur mesure ",
     src: "/mariage.png",
+    info: "Pour votre mariage, je viendrai vous rencontrer avant le grand jour, afin de répondre au mieux à vos souhaits.",
+    forfait1: ["Mairie, lieu de culte, et vin d'honneur", "600€", "95 photos"],
+    forfait2: [
+      "Journée complète (préparation de la mariée, mairie,lieu de culte, et vin d'honneur)",
+      "900€",
+      "photos illimitées",
+    ],
+    restriction: [
+      "Si vous souhaitez que je reste jusqu'à la pièce montée il faudra compter un supplément de 200€.",
+      "Le prix comprend la retouche artistique et le traitement des photos.",
+      "Pour des séances au-delà de 20km d'Amiens, un supplément sera facturé pour les frais de transport.",
+      "Les photos seront disponibles en HD dans un délai de 1 mois. Elles seront envoyées sur une clé USB directement à votre domicile.",
+    ],
+    contact: "Pour toute autre demande, n'hésitez pas à me contacter.",
   },
   {
     id: 7,
@@ -57,21 +116,15 @@ export const presta = [
       "Pour le plaisir de se faire plaisir ! Osez une séance Boudoir pour révéler votre beauté. ",
     price: "A partir de 150€",
     src: "/boudoir.png",
-    forfait: "forfait 1",
-    forfait1: "150€",
-    forfaitphoto: "10 photos ",
-    forfait2: "forfait 2",
-    forfait2prix: "200€",
-    forfaitphoto2: "15 photos ",
-    restriction:
-      "Pour des séances au-delà de 20km d'Amiens, un supplément sera facturé pour les frais de transport.",
-    info: "Il faut compter environ 1h30 pour une séance. ",
-    retouche:
+    forfait1: ["Forfait 1", "150€", "10 photos"],
+    forfait2: ["Forfait 2", "200€", "15 photos"],
+    info: "La séance se réalise en intérieur, pour garder toute l'intimité de ce moment. Nous échangeons quelques temps avant de commencer la séance. La séance boudoir offre un moment de temps suspendu et de déconnexion. Il met en valeur le corps humain à travers des jeux de lumières.",
+    restriction: [
       "Le prix comprend la retouche artistique et le traitement des photos.",
-    delivre:
+      "Pour des séances au-delà de 20km d'Amiens, un supplément sera facturé pour les frais de transport.",
+      "Il faut compter environ 1h30 pour une séance.",
       "Les photos seront disponibles en HD dans un délai de 3 semaines via un lien de téléchargement.",
-    condition:
-      "La séance se réalise en intérieur, pour garder toute l'intimité de ce moment. Nous échangeons quelques temps avant de commencer la séance. La séance boudoir offre un moment de temps suspendu et de déconnexion. Il met en valeur le corps humain à travers des jeux de lumières.",
+    ],
   },
   {
     id: 8,
@@ -80,10 +133,12 @@ export const presta = [
       "Je vous accompagne et vous guide afin d'obtenir des portraits authentiques pour vos expériences professionnelles.",
     price: "(Devis personnalisé)",
     src: "/portrait.png",
-    detail:
+    restriction: [
       "Avant de réaliser la séance il est important que nous échangions par rapport à vos attentes et votre métier.",
-    restriction: "Un devis personnalisé vous sera proposé après cet entretien.",
-    info: "Je vous invite à remplir le formulaire de contact pour que je puisse en savoir plus.",
+      "Un devis personnalisé vous sera proposé après cet entretien.",
+    ],
+    contact:
+      "Je vous invite à remplir le formulaire de contact pour que je puisse en savoir plus.",
   },
   {
     id: 9,
@@ -91,8 +146,9 @@ export const presta = [
     description: "Mise en valeur de votre entreprise et de vos réalisations. ",
     price: "(Devis personnalisé)",
     src: "/culinaire.png",
-    detail:
+    restriction: [
       "Les tarifs se font sur devis après un entretien téléphonique. Cela permet de répondre au mieux a vos attentes.",
-    restriction: "Je vous invite à remplir le formulaire de contact. ",
+    ],
+    contact: "Je vous invite à remplir le formulaire de contact. ",
   },
 ];
