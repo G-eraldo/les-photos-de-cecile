@@ -71,7 +71,7 @@ export default function ImpressionQualite() {
           </div>
         </div>
         <div className="relative left-60">
-          <Button className="text-lg max-w-xs">
+          <Button asChild className="text-lg max-w-xs">
             <Link href="/tirages-photo/commande">Developper vos photos</Link>
           </Button>
         </div>
