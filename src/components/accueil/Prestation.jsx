@@ -23,7 +23,7 @@ export default function Prestation() {
           />
         </CardDescription>
         <CardContent className="w-full lg:w-1/2 text-[#9e8b8b] leading-8 font-playfair py-4 sm:py-8 text-base sm:text-lg">
-          <CardTitle className="text-xl sm:text-2xl font-bold mb-4 text-[#613213] w-full whitespace-nowrap overflow-hidden text-ellipsis">
+          <CardTitle className="text-base sm:text-2xl font-bold mb-4 text-[#613213] w-full whitespace-nowrap overflow-hidden text-ellipsis">
             Bain thérapeutique photographié
           </CardTitle>
           <p className="hover:text-[#613213] transition-colors duration-300 mb-5 text-justify">
