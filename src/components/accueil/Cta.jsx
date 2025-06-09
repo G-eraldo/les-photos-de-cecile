@@ -18,16 +18,16 @@ export default function Cta() {
         Tirages de Photos
       </CardTitle>
       <div className="flex flex-col sm:flex-row gap-6">
-        <CardContent className="w-full sm:w-1/2 text-[#9e8b8b] leading-8 font-playfair sm:py-8 text-base sm:text-lg text-justify">
-          <p className="hover:text-[#613213] transition-colors duration-300 mb-5">
+        <CardContent className="w-full sm:w-1/2 text-[#9e8b8b] leading-8 font-playfair sm:py-8 text-base sm:text-lg">
+          <p className="hover:text-[#613213] transition-colors duration-300 mb-5 text-justify">
             Chaque photographie raconte une histoire unique.
           </p>
-          <p className="hover:text-[#613213] transition-colors duration-300 mb-5 ">
+          <p className="hover:text-[#613213] transition-colors duration-300 mb-5 text-justify">
             C'est pourquoi vous trouverez une variété de formats pour vos
             tirages, allant des petites impressions (idéales pour les albums)
             aux grands formats (qui sauront habiller vos murs avec élégance).
           </p>
-          <p className="hover:text-[#613213] transition-colors duration-300 mb-5">
+          <p className="hover:text-[#613213] transition-colors duration-300 mb-5 text-justify">
             Les tirages sont réalisés avec des matériaux de haute qualité,
             garantissant une durabilité et une fidélité des couleurs qui
             mettront en valeur vos souvenirs pour les années à venir.

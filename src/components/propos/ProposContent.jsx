@@ -14,28 +14,28 @@ export default function ProposContent() {
           />
         </CardDescription>
         <CardContent className="w-full text-justify lg:w-1/2 text-[#9e8b8b] leading-8 font-playfair py-4 sm:py-8 text-base sm:text-lg">
-          <p className="hover:text-[#613213] transition-colors duration-300 mb-5">
+          <p className="hover:text-[#613213] transition-colors duration-300 mb-5 text-justify">
             J'ai commencé à m'intéresser à la photographie à l'âge de 17 ans.
             J'ai passé de nombreuses années à essayer toutes sortes de
             photographies, parfois passant des heures devant une abeille pour
             obtenir LA photo idéale.
           </p>
-          <p className="hover:text-[#613213] transition-colors duration-300 mb-5 ">
+          <p className="hover:text-[#613213] transition-colors duration-300 mb-5 text-justify">
             13 ans plus tard, je décide de transformer cette passion en une
             entreprise qui me ressemble, et qui rendra fiers les personnes qui
             m'entourent.
           </p>
-          <p className="hover:text-[#613213] transition-colors duration-300 mb-5">
+          <p className="hover:text-[#613213] transition-colors duration-300 mb-5 text-justify">
             Ce qui me distingue, c'est la capacité à mettre les clients à l'aise
             et à saisir des instants authentiques et spontanés.
           </p>
-          <p className="hover:text-[#613213] transition-colors duration-300 mb-5">
+          <p className="hover:text-[#613213] transition-colors duration-300 mb-5 text-justify">
             Que ce soit pour une séance photo de famille, un shooting grossesse
             ou un événement spécial, je m'efforce de refléter la personnalité de
             chacun à travers mon objectif.
           </p>
 
-          <p className="hover:text-[#613213] transition-colors duration-300">
+          <p className="hover:text-[#613213] transition-colors duration-300 text-justify">
             Vos regards et vos émotions sont capturés avec soin et précision.
           </p>
         </CardContent>

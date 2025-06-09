@@ -70,22 +70,22 @@ export default function Accueil() {
           </Carousel>
         </CardDescription>
         <CardContent className="w-full lg:w-1/2 text-[#9e8b8b] leading-8 font-playfair py-4 sm:py-8 text-base sm:text-lg">
-          <p className="hover:text-[#613213] transition-colors duration-300 mb-5">
+          <p className="hover:text-[#613213] transition-colors duration-300 mb-5 text-justify">
             Immortalisons ensemble les moments précieux de votre vie avec
             authenticité et passion. Située à Amiens, je capture votre quotidien
             au naturel pour des souvenirs intemporels.
           </p>
-          <p className="hover:text-[#613213] transition-colors duration-300 mb-5 ">
+          <p className="hover:text-[#613213] transition-colors duration-300 mb-5 text-justify">
             Je suis une photographe qui se déplace chez vous pour réaliser des
             séances en intérieur ou en extérieur dans notre belle région
             Picarde. Ma passion est de transformer vos moments de vie en
             souvenirs inoubliables.
           </p>
-          <p className="hover:text-[#613213] transition-colors duration-300 mb-5">
+          <p className="hover:text-[#613213] transition-colors duration-300 mb-5 text-justify">
             Je crois en la beauté de l'authenticité et m'efforce de raconter
             votre histoire à travers des images sincères.
           </p>
-          <p className="hover:text-[#613213] transition-colors duration-300 mb-5">
+          <p className="hover:text-[#613213] transition-colors duration-300 mb-5 text-justify">
             Que ce soit pour des portraits de famille, des photos de naissance,
             de grossesse, de vos animaux de compagnie, mais aussi de mariage ou
             bien encore tout simplement des instants de vie du quotidien, je

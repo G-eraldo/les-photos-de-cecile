@@ -22,28 +22,28 @@ export default function Prestation() {
             src="./prestation.png"
           />
         </CardDescription>
-        <CardContent className="w-full text-justify lg:w-1/2 text-[#9e8b8b] leading-8 font-playfair py-4 sm:py-8 text-base sm:text-lg">
-          <CardTitle className="text-2xl font-bold mb-4 text-[#613213]">
-            Bain thérapeutique photographié{" "}
+        <CardContent className="w-full lg:w-1/2 text-[#9e8b8b] leading-8 font-playfair py-4 sm:py-8 text-base sm:text-lg">
+          <CardTitle className="text-xl sm:text-2xl font-bold mb-4 text-[#613213] w-full whitespace-nowrap overflow-hidden text-ellipsis">
+            Bain thérapeutique photographié
           </CardTitle>
-          <p className="hover:text-[#613213] transition-colors duration-300 mb-5">
+          <p className="hover:text-[#613213] transition-colors duration-300 mb-5 text-justify">
             La séance se déroule à Rivery avec Hyn'Odysée bien naître et dure
             environ 1h30 parfois plus selon bébé.
           </p>
-          <p className="hover:text-[#613213] transition-colors duration-300 mb-5 ">
+          <p className="hover:text-[#613213] transition-colors duration-300 mb-5 text-justify">
             Le bain thérapeutique est un soin qui permet au bébé de retrouver
             les sensations connues de sa vie intra-utérine. Emmailloté dans une
             eau chaude, il est libre de ses mouvements et retrouve le bien-être
             du ventre maternel.
           </p>
-          <p className="hover:text-[#613213] transition-colors duration-300 mb-5">
+          <p className="hover:text-[#613213] transition-colors duration-300 mb-5 text-justify">
             Plongé dans ses souvenirs, le retrait du lange représente pour lui
             le moment de la naissance. Il refait le passage entre les deux
             mondes plus en douceur. Ce bain permet parfois de libérer des
             émotions pour le bébé et pour la maman, surtout lorsque
             l'accouchement n'est pas celui qui était souhaité...
           </p>
-          <p className="hover:text-[#613213] transition-colors duration-300 mb-5">
+          <p className="hover:text-[#613213] transition-colors duration-300 mb-5 text-justify">
             C'est Hélène qui s'occupera de réaliser le bain thérapeutique. Elle
             est auxiliaire de puériculture en maternité et s'est formée à
             l'école du bien naître de Sonia Krief.
