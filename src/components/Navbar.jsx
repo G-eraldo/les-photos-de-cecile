@@ -6,10 +6,10 @@ import { Menu, X } from "lucide-react";
 import { useEffect, useState } from "react";
 
 const menuItems = [
-  { name: "A propos", href: "/a-propos" },
+  { name: "À propos", href: "/a-propos" },
   { name: "Portfolio", href: "/portfolio" },
   { name: "Prestations", href: "/prestations" },
-  { name: "Tirages photo", href: "/tirages-photo" },
+  { name: "Tirages photos", href: "/tirages-photo" },
   { name: "Contact", href: "/contact" },
 ];
 
@@ -32,13 +32,13 @@ export default function Navbar() {
       >
         <div
           className={cn(
-            "mx-auto mt-2 max-w-6xl px-6 transition-all duration-300 lg:px-12",
+            "mx-auto mt-2 max-w-6xl px-4 sm:px-6 transition-all duration-300 lg:px-12",
             isScrolled &&
               "shadow-xl max-w-4xl rounded-2xl border backdrop-blur-lg lg:px-5"
           )}
         >
           <div className="relative flex flex-wrap items-center justify-between gap-6 py-3 lg:gap-0 lg:py-4">
-            <div className="flex w-full justify-between lg:w-auto  text-xl">
+            <div className="flex w-full justify-between lg:w-auto text-xl">
               <Link
                 href="/"
                 aria-label="home"
@@ -60,9 +60,9 @@ export default function Navbar() {
             <div
               className={`absolute size-fit lg:block text-xl transition-all duration-1000 ${
                 isScrolled ? "right-10" : "inset-0 m-auto pl-52"
-              }`}
+              } hidden lg:block`}
             >
-              <ul className="flex gap-8 text-lg ">
+              <ul className="flex gap-8 text-lg">
                 {menuItems.map((item, index) => (
                   <li key={index}>
                     <Link

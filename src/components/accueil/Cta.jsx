@@ -7,67 +7,18 @@ import {
   CardFooter,
   CardTitle,
 } from "@/components/ui/card";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-} from "@/components/ui/carousel";
-import { useEffect, useState } from "react";
-
-import { presta } from "@/lib/dataPresta";
 
 import Link from "next/link";
 import { Button } from "../ui/button";
 
 export default function Cta() {
-  const [api, setApi] = useState();
-
-  useEffect(() => {
-    if (!api) {
-      return;
-    }
-
-    const autoplay = setInterval(() => {
-      api.scrollNext();
-    }, 3000);
-
-    return () => clearInterval(autoplay);
-  }, [api]);
-
   return (
-    <Card className="max-w-5xl mx-auto p-6 mt-15">
-      <CardTitle className="text-2xl font-bold mb-4 text-[#613213]">
+    <Card className="max-w-5xl mx-auto p-4 sm:p-6 mt-15">
+      <CardTitle className="text-2xl font-bold mb-4 text-[#613213] text-center sm:text-left">
         Tirages de Photos
       </CardTitle>
-      <div className="flex gap-6">
-        <CardDescription className="w-1/2 h-[300px]">
-          <Carousel
-            setApi={setApi}
-            opts={{
-              align: "end",
-              loop: true,
-            }}
-            className="w-[320px] h-[210px] left-20 shadow-2xl"
-          >
-            <CarouselContent>
-              {presta.map((src) => (
-                <CarouselItem key={src.id}>
-                  <div className="">
-                    <Card>
-                      <CardContent className="flex aspect-square items-center justify-center">
-                        <img
-                          className="w-full h-full object-cover object-top rounded-lg mt-2"
-                          src={src.src}
-                        />
-                      </CardContent>
-                    </Card>
-                  </div>
-                </CarouselItem>
-              ))}
-            </CarouselContent>
-          </Carousel>
-        </CardDescription>
-        <CardContent className="w-1/2 text-[#9e8b8b] leading-8 font-playfair py-8 text-lg text-justify">
+      <div className="flex flex-col sm:flex-row gap-6">
+        <CardContent className="w-full sm:w-1/2 text-[#9e8b8b] leading-8 font-playfair sm:py-8 text-base sm:text-lg text-justify">
           <p className="hover:text-[#613213] transition-colors duration-300 mb-5">
             Chaque photographie raconte une histoire unique.
           </p>
@@ -82,6 +33,12 @@ export default function Cta() {
             mettront en valeur vos souvenirs pour les années à venir.
           </p>
         </CardContent>
+        <CardDescription className="w-full h-[300px] lg:w-1/2 sm:h-[300px]">
+          <img
+            className="w-full h-full object-cover rounded-lg shadow-2xl"
+            src="./cta.png"
+          />
+        </CardDescription>
       </div>
       <CardFooter className="flex justify-center">
         <Button asChild className="items-center">

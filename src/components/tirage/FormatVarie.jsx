@@ -19,22 +19,22 @@ const presta = [
 
 export default function FormatVarie() {
   return (
-    <Card className="max-w-5xl mx-auto p-6 mt-32">
-      <CardTitle className="text-2xl font-bold mb-4 text-[#613213]">
+    <Card className="max-w-5xl mx-auto p-4 md:p-6 mt-16 md:mt-32">
+      <CardTitle className="text-xl md:text-2xl font-bold mb-4 text-[#613213]">
         Une gamme de formats variés
       </CardTitle>
-      <CardDescription className="text-[#9e8b8b] ">
+      <CardDescription className="text-[#9e8b8b]">
         Tirage d'art sur papier traditionnel
       </CardDescription>
-      <div className="flex gap-6 mt-6">
-        <CardContent className="w-1/2 h-[570px]">
+      <div className="flex flex-col md:flex-row gap-6 mt-6">
+        <CardContent className="w-full md:w-1/2 h-[300px] md:h-[570px]">
           <img
             src="/format.png"
             className="w-full h-full object-cover object-top rounded-lg"
             alt="Formats disponibles"
           />
         </CardContent>
-        <CardContent className="w-1/2">
+        <CardContent className="w-full md:w-1/2">
           <div className="grid gap-4">
             {presta.map((prestas) => (
               <Card
@@ -44,7 +44,7 @@ export default function FormatVarie() {
                 <div className="flex justify-between items-center">
                   <div>
                     <CardDescription className="mb-1">Format</CardDescription>
-                    <CardContent className="p-0 font-medium text-[#9e8b8b] ">
+                    <CardContent className="p-0 font-medium text-[#9e8b8b]">
                       {prestas.name}
                     </CardContent>
                   </div>
@@ -60,23 +60,18 @@ export default function FormatVarie() {
           </div>
         </CardContent>
       </div>
-      <CardFooter>
-        <div className="flex-cols">
-          <div>
-            <p className="p-0 font-medium text-[#9e8b8b]">
-              Vous avez la possibilité de choisir avec ou sans marge.
-            </p>
-
-            <p className="p-0 font-medium text-xs text-[#9e8b8b]">
-              * Tous les prix sont hors taxes
-            </p>
-          </div>
+      <CardFooter className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+        <div>
+          <p className="p-0 font-medium text-[#9e8b8b]">
+            Vous avez la possibilité de choisir avec ou sans marge.
+          </p>
+          <p className="p-0 font-medium text-xs text-[#9e8b8b]">
+            * Tous les prix sont hors taxes
+          </p>
         </div>
-        <div className="relative left-60">
-          <Button asChild className="text-lg max-w-xs ">
-            <Link href="/tirages-photo/commande">Developper vos photos</Link>
-          </Button>
-        </div>
+        <Button asChild className="text-lg w-full md:w-auto">
+          <Link href="/tirages-photo/commande">Développer vos photos</Link>
+        </Button>
       </CardFooter>
     </Card>
   );

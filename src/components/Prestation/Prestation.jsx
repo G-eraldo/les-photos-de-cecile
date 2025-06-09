@@ -19,12 +19,12 @@ import Reservation from "./Reservation";
 
 export default function Prestation() {
   return (
-    <Card className="max-w-6xl mx-auto p-6 mt-32">
+    <Card className="max-w-6xl mx-auto p-4 sm:p-6 mt-32">
       <CardTitle className="text-2xl font-bold mb-4 text-[#613213]">
         Prestations
       </CardTitle>
       <div className="mt-6">
-        <div className="grid grid-cols-3 gap-4 gap-y-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 gap-y-8">
           {presta.map((prestas) => (
             <Card
               key={prestas.id}
@@ -32,7 +32,7 @@ export default function Prestation() {
             >
               <img
                 src={prestas.src}
-                className="w-full object-cover rounded-lg"
+                className="w-full h-48 sm:h-64 object-cover rounded-lg"
                 alt="Formats disponibles"
               />
               <div className="flex flex-col flex-1 mt-4">
@@ -46,7 +46,7 @@ export default function Prestation() {
                     {prestas.description}
                   </CardContent>
                 </div>
-                <div className="">
+                <div>
                   <CardContent className="p-0 font-medium text-[#9e8b8b] mb-5">
                     {prestas.price}
                   </CardContent>
@@ -58,7 +58,7 @@ export default function Prestation() {
                     >
                       Détails
                     </DialogTrigger>
-                    <DialogContent>
+                    <DialogContent className="max-w-[90vw] max-h-[90vh] overflow-y-auto sm:max-w-3xl">
                       <DialogHeader>
                         <DialogTitle className="text-[#613213] text-2xl font-bold mb-4">
                           {prestas.name}
@@ -107,7 +107,7 @@ export default function Prestation() {
                             {prestas.restriction &&
                               prestas.restriction.map((restriction) => (
                                 <li
-                                  className="pb-4 list-none"
+                                  className="pb-2 list-none sm:pb-3"
                                   key={restriction}
                                 >
                                   {restriction}
@@ -116,7 +116,7 @@ export default function Prestation() {
                           </DialogDescription>
 
                           {prestas.contact && (
-                            <DialogDescription className="text-[#9e8b8b] flex flex-col gap-6 items-start">
+                            <DialogDescription className="text-[#9e8b8b] flex flex-col gap-2 items-start sm:gap-6">
                               {Array.isArray(prestas.contact) ? (
                                 prestas.contact.map((contact, index) => (
                                   <li key={index} className="list-none">
@@ -129,7 +129,7 @@ export default function Prestation() {
                               <Button asChild>
                                 <Link href="/contact">
                                   <Mail />
-                                  contact
+                                  Contact
                                 </Link>
                               </Button>
                             </DialogDescription>

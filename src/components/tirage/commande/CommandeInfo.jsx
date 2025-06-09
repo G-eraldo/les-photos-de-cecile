@@ -80,12 +80,10 @@ export default function CommandeInfo() {
         <Label htmlFor="image">Photo</Label>
         <Input id="image" name="image" type="file" accept="image/*" required />
       </div>
-      <div className="relative right-13 mt-6">
-        <div>
-          <Button type="submit" disabled={pending} className="">
-            {pending ? "Envoi en cours..." : `Payer ${price}`}
-          </Button>
-        </div>
+      <div className="mt-6 flex justify-center sm:justify-start">
+        <Button className="" type="submit" disabled={pending}>
+          {pending ? "Envoi en cours..." : `Payer ${price}`}
+        </Button>
       </div>
     </div>
   );

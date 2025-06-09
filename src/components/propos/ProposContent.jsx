@@ -2,18 +2,18 @@ import { Card, CardContent, CardDescription, CardTitle } from "../ui/card";
 
 export default function ProposContent() {
   return (
-    <Card className="max-w-5xl mx-auto p-6 mt-32">
+    <Card className="max-w-5xl mx-auto p-4 sm:p-6 mt-32">
       <CardTitle className="text-2xl font-bold mb-4 text-[#613213]">
         Un petit bout de moi
       </CardTitle>
-      <div className="flex gap-6">
-        <CardDescription className="w-1/2 h-[500px]">
+      <div className="flex flex-col lg:flex-row gap-6">
+        <CardDescription className="w-full lg:w-1/2 h-[300px] sm:h-[400px] lg:h-[500px]">
           <img
             src="/profil.png"
             className="w-full h-full object-cover object-top rounded-lg mt-5 shadow-2xl"
           />
         </CardDescription>
-        <CardContent className="w-1/2 text-[#9e8b8b] leading-8 font-playfair py-8 text-lg ">
+        <CardContent className="w-full text-justify lg:w-1/2 text-[#9e8b8b] leading-8 font-playfair py-4 sm:py-8 text-base sm:text-lg">
           <p className="hover:text-[#613213] transition-colors duration-300 mb-5">
             J'ai commencé à m'intéresser à la photographie à l'âge de 17 ans.
             J'ai passé de nombreuses années à essayer toutes sortes de
@@ -22,11 +22,11 @@ export default function ProposContent() {
           </p>
           <p className="hover:text-[#613213] transition-colors duration-300 mb-5 ">
             13 ans plus tard, je décide de transformer cette passion en une
-            entreprise qui me ressemble, et qui rendra fier les personnes qui
+            entreprise qui me ressemble, et qui rendra fiers les personnes qui
             m'entourent.
           </p>
           <p className="hover:text-[#613213] transition-colors duration-300 mb-5">
-            Ce qui me distingue c'est la capacité à mettre les clients à l'aise
+            Ce qui me distingue, c'est la capacité à mettre les clients à l'aise
             et à saisir des instants authentiques et spontanés.
           </p>
           <p className="hover:text-[#613213] transition-colors duration-300 mb-5">

@@ -1,25 +1,25 @@
 import Link from "next/link";
 
 const links = [
-  { title: "A propos", href: "/a-propos" },
+  { title: "À propos", href: "/a-propos" },
   { title: "Portfolio", href: "/portfolio" },
   { title: "Prestations", href: "/prestations" },
-  { title: "Tirages photo", href: "/tirages-photo" },
+  { title: "Tirages photos", href: "/tirages-photo" },
   { title: "Contact", href: "/contact" },
 ];
 
 export default function Footer() {
   return (
-    <footer className="font-poppins py-16 md:py-32">
-      <div className="mx-auto max-w-5xl px-6">
+    <footer className="font-poppins py-8 sm:py-16 md:py-32">
+      <div className="mx-auto max-w-5xl px-4 sm:px-6">
         <div className="flex items-center justify-center gap-2">
-          <img src="/logo.svg" alt="Pizza Planet Logo" width={32} height={32} />
+          <img src="/logo.svg" alt="Cecile Logo" width={32} height={32} />
           <Link href="/" aria-label="go home" className="text-[#382b27]">
             Les Photos de Cécile
           </Link>
         </div>
 
-        <div className="my-8 flex flex-wrap justify-center gap-6 text-sm">
+        <div className="my-6 sm:my-8 flex flex-wrap justify-center gap-4 sm:gap-6 text-sm">
           {links.map((link, index) => (
             <Link
               key={index}
@@ -95,8 +95,8 @@ export default function Footer() {
         </div>
         <span className="block text-center text-sm text-[#9e8b8b]">
           {" "}
-          © {new Date().getFullYear()} Les photo de Cécile, tout droits
-          reservés - site edité par Gerald
+          © {new Date().getFullYear()} Les photos de Cécile, tous droits
+          réservés - site édité par Gerald
         </span>
       </div>
     </footer>
