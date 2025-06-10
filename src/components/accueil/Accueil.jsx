@@ -40,34 +40,33 @@ export default function Accueil() {
         Bienvenue
       </CardTitle>
       <div className="flex flex-col lg:flex-row gap-6">
-        <CardDescription className="lg:w-1/2 sm:h-[400px] lg:h-[500px]">
-          <Carousel
-            className="shadow-2xl"
-            setApi={setApi}
-            opts={{
-              align: "start",
-              loop: true,
-            }}
-          >
-            <CarouselContent>
-              {presta.map((src) => (
-                <CarouselItem key={src.id}>
-                  <div className="">
-                    <Card>
-                      <CardContent className="flex aspect-square items-center justify-center">
-                        <img
-                          className="w-full h-full object-cover object-top rounded-lg mt-5"
-                          src={src.src}
-                        />
-                      </CardContent>
-                    </Card>
-                  </div>
-                </CarouselItem>
-              ))}
-            </CarouselContent>
-            <CarouselPrevious className="absolute left-10 top-1/2 -translate-y-1/2" />
-            <CarouselNext className="absolute right-10 top-1/2 -translate-y-1/2" />
-          </Carousel>
+        <CardDescription className="lg:w-1/2 h-[300px] sm:h-[400px] lg:h-[500px] overflow-hidden">
+          <div className="relative w-full h-full">
+            <Carousel
+              className="w-full h-full"
+              setApi={setApi}
+              opts={{
+                align: "start",
+                loop: true,
+              }}
+            >
+              <CarouselContent className="h-full">
+                {presta.map((src) => (
+                  <CarouselItem key={src.id} className="h-full">
+                    <div className="w-full h-full">
+                      <img
+                        className="object-contain object-bottom sm:object-cover rounded-lg"
+                        src={src.src}
+                        alt="Photo de prestation"
+                      />
+                    </div>
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+              <CarouselPrevious className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white z-10" />
+              <CarouselNext className="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white z-10" />
+            </Carousel>
+          </div>
         </CardDescription>
         <CardContent className="w-full lg:w-1/2 text-[#9e8b8b] leading-8 font-playfair py-4 sm:py-8 text-base sm:text-lg">
           <p className="hover:text-[#613213] transition-colors duration-300 mb-5 text-justify">
