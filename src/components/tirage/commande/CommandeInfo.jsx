@@ -14,20 +14,20 @@ import { useState } from "react";
 import { useFormStatus } from "react-dom";
 
 const varie = [
-  { name: "10x15", price: "6 €" },
-  { name: "13x18 / 15x15", price: "8 €" },
-  { name: "20x20 / 18x24 / A4 / 20x30", price: "15 €" },
-  { name: "30x30", price: "20 €" },
-  { name: "30x40", price: "25 €" },
-  { name: "A2", price: "40 €" },
+  { name: "10x15", price: "6" },
+  { name: "13x18 / 15x15", price: "8" },
+  { name: "20x20 / 18x24 / A4 / 20x30", price: "15" },
+  { name: "30x30", price: "20" },
+  { name: "30x40", price: "25" },
+  { name: "A2", price: "40" },
 ];
 
 const qualite = [
-  { name: "10x15", price: "8 €" },
-  { name: "13x18 / 15x15", price: "10 €" },
-  { name: "20x20 / 18x24 / A4 / 20x30", price: "17 €" },
-  { name: "30x30", price: "22 €" },
-  { name: "30x40", price: "27 €" },
+  { name: "10x15", price: "8" },
+  { name: "13x18 / 15x15", price: "10" },
+  { name: "20x20 / 18x24 / A4 / 20x30", price: "17" },
+  { name: "30x30", price: "22" },
+  { name: "30x40", price: "27" },
 ];
 
 export default function CommandeInfo() {
@@ -68,7 +68,7 @@ export default function CommandeInfo() {
             <SelectContent>
               {formats.map((item) => (
                 <SelectItem key={item.name} value={item.price}>
-                  {item.name} - {item.price}
+                  {item.name} - {item.price} €
                 </SelectItem>
               ))}
             </SelectContent>
@@ -82,7 +82,7 @@ export default function CommandeInfo() {
       </div>
       <div className="mt-6 flex justify-center sm:justify-start">
         <Button className="" type="submit" disabled={pending}>
-          {pending ? "Envoi en cours..." : `Payer ${price}`}
+          {pending ? "Envoi en cours..." : `Payer ${price} €`}
         </Button>
       </div>
     </div>

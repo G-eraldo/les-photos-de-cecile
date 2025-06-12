@@ -32,7 +32,7 @@ export default function Prestation() {
             >
               <img
                 src={prestas.src}
-                className="w-full h-48 sm:h-64 object-cover rounded-lg"
+                className="w-full h-56 rounded-lg object-contain sm:object-cover  sm:h-64 "
                 alt="Formats disponibles"
               />
               <div className="flex flex-col flex-1 mt-4">

@@ -55,7 +55,7 @@ export default function Accueil() {
                   <CarouselItem key={src.id} className="h-full">
                     <div className="w-full h-full">
                       <img
-                        className="object-contain object-bottom sm:object-cover rounded-lg"
+                        className="sm:object-cover rounded-lg"
                         src={src.src}
                         alt="Photo de prestation"
                       />

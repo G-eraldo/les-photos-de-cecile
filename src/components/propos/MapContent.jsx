@@ -42,7 +42,7 @@ export default function MapContent() {
                 Contactez-moi
               </Link>
             </Button>
-            <div className="mt-4 sm:mt-6 h-[400px] sm:h-[400px]">
+            <div className="mt-4 sm:mt-6">
               <Map />
             </div>
           </CardContent>

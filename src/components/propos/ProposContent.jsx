@@ -7,10 +7,10 @@ export default function ProposContent() {
         Un petit bout de moi
       </CardTitle>
       <div className="flex flex-col lg:flex-row gap-6">
-        <CardDescription className="w-full lg:w-1/2 h-[300px] sm:h-[400px] lg:h-[500px]">
+        <CardDescription className="w-full lg:w-1/2 h-[300px] sm:h-[450px] lg:h-[500px]">
           <img
             src="/profil.png"
-            className="w-full h-full object-cover object-top rounded-lg mt-5 shadow-2xl"
+            className="w-full h-full object-cover object-center object-top rounded-lg mt-5 shadow-2xl"
           />
         </CardDescription>
         <CardContent className="w-full text-justify lg:w-1/2 text-[#9e8b8b] leading-8 font-playfair py-4 sm:py-8 text-base sm:text-lg">
