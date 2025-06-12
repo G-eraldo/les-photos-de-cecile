@@ -38,17 +38,17 @@ export default function Formcontent() {
   }, [state]); // Exécuter l'effet uniquement lorsque l'état change
 
   return (
-    <Card className="max-w-2xl mx-auto p-4 sm:p-6 mt-32">
-      <CardTitle className="text-xl sm:text-2xl font-bold mb-4 text-[#613213]">
+    <Card className="max-w-2xl mx-auto p-4 md:p-6 mt-32">
+      <CardTitle className="text-xl md:text-2xl font-bold mb-4 text-[#613213]">
         Contactez-moi
       </CardTitle>
-      <CardDescription className="mb-4 sm:mb-6 text-[#9e8b8b]">
+      <CardDescription className="mb-4 md:mb-6 text-[#9e8b8b]">
         Pour toute demande, n'hésitez pas à m'écrire. Je serai ravie de vous
         répondre rapidement.
       </CardDescription>
       <form
         action={formAction}
-        className="space-y-4 sm:space-y-6 text-[#9e8b8b]"
+        className="space-y-4 md:space-y-6 text-[#9e8b8b]"
       >
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div className="grid w-full items-center gap-2">

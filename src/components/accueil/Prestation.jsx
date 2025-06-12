@@ -1,29 +1,23 @@
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardTitle,
-} from "@/components/ui/card";
+import { Card, CardContent, CardFooter, CardTitle } from "@/components/ui/card";
 
 import Link from "next/link";
 import { Button } from "../ui/button";
 
 export default function Prestation() {
   return (
-    <Card className="max-w-5xl mx-auto p-4 sm:p-6 mt-15">
+    <Card className="max-w-5xl mx-auto p-4 md:p-6 mt-12">
       <CardTitle className="text-2xl font-bold mb-4 text-[#613213]">
         Prestations
       </CardTitle>
       <div className="flex flex-col lg:flex-row gap-6">
-        <CardDescription className="w-full lg:w-1/2 h-[300px] sm:h-[400px] lg:h-[500px]">
+        <div className="w-full lg:w-1/2 aspect-[3/4] md:aspect-[4/3] lg:aspect-video overflow-hidden">
           <img
             className="w-full h-full object-cover object-top rounded-lg mt-5 shadow-2xl"
             src="./prestation.png"
           />
-        </CardDescription>
-        <CardContent className="w-full lg:w-1/2 text-[#9e8b8b] leading-8 font-playfair py-4 sm:py-8 text-base sm:text-lg">
-          <CardTitle className="text-base sm:text-2xl font-bold mb-4 text-[#613213] w-full whitespace-nowrap overflow-hidden text-ellipsis">
+        </div>
+        <CardContent className="w-full lg:w-1/2 text-[#9e8b8b] leading-8 font-playfair py-4 md:py-8 text-base md:text-lg">
+          <CardTitle className="text-base md:text-2xl font-bold mb-4 text-[#613213] w-full whitespace-nowrap overflow-hidden text-ellipsis">
             Bain thérapeutique photographié
           </CardTitle>
           <p className="hover:text-[#613213] transition-colors duration-300 mb-5 text-justify">

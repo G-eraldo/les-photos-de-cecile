@@ -32,6 +32,7 @@ const qualite = [
 
 export default function CommandeInfo() {
   const { pending } = useFormStatus();
+
   const [type, setType] = useState("");
   const [price, setPrice] = useState("");
   const formats =
@@ -40,9 +41,10 @@ export default function CommandeInfo() {
       : type === "impression-qualite"
         ? qualite
         : [];
+
   return (
     <div className="space-y-4">
-      <div className="grid grid-cols-2 gap-4">
+      <div className="grid md:grid-cols-2 gap-4">
         <div className="grid w-full items-center gap-2">
           <Label htmlFor="type">Type de prestation</Label>
           <Select name="type" onValueChange={(value) => setType(value)}>
@@ -82,7 +84,11 @@ export default function CommandeInfo() {
       </div>
       <div className="mt-6 flex justify-center sm:justify-start">
         <Button className="" type="submit" disabled={pending}>
-          {pending ? "Envoi en cours..." : `Payer ${price} €`}
+          {pending
+            ? "Envoi en cours..."
+            : price === ""
+              ? "Payer"
+              : `Payer ${price} €`}
         </Button>
       </div>
     </div>

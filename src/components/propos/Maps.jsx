@@ -39,7 +39,7 @@ export default function Maps() {
   }, [center.lng, center.lat, zoom]);
 
   return (
-    <div className="relative w-[100%] h-[23vh] pt-3 lg:h-[26vh] xl:h-[50vh]">
+    <div className="relative w-[100%] h-[23vh] pt-3 md:min-h-[26vh]">
       <div ref={mapContainer} className="absolute w-[100%] h-[100%]" />
     </div>
   );

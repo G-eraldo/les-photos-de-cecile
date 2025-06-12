@@ -21,7 +21,7 @@ export default function ImpressionQualite() {
       <CardTitle className="text-xl md:text-2xl font-bold mb-4 text-[#613213]">
         Des prix pour une impression de qualité
       </CardTitle>
-      <CardDescription className="text-[#9e8b8b] ">
+      <CardDescription className="text-[#9e8b8b]">
         Tirage fine art sur papier coton grain + ou grain +++
       </CardDescription>
       <div className="flex flex-col md:flex-row gap-6 mt-6">
@@ -42,7 +42,7 @@ export default function ImpressionQualite() {
                 <div className="flex justify-between items-center">
                   <div>
                     <CardDescription className="mb-1">Format</CardDescription>
-                    <CardContent className="p-0 font-medium text-[#9e8b8b] ">
+                    <CardContent className="p-0 font-medium text-[#9e8b8b]">
                       {prestas.name}
                     </CardContent>
                   </div>

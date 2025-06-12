@@ -27,7 +27,7 @@ export default function FormatVarie() {
         Tirage d'art sur papier traditionnel
       </CardDescription>
       <div className="flex flex-col md:flex-row gap-6 mt-6">
-        <CardContent className="w-full md:w-1/2 h-[300px] md:h-[570px]">
+        <CardContent className="w-full md:w-1/2 h-[300px] md:h-[500px]">
           <img
             src="/format.png"
             className="w-full h-full object-cover object-top rounded-lg"

@@ -19,12 +19,12 @@ import Reservation from "./Reservation";
 
 export default function Prestation() {
   return (
-    <Card className="max-w-6xl mx-auto p-4 sm:p-6 mt-32">
-      <CardTitle className="text-2xl font-bold mb-4 text-[#613213]">
+    <Card className="max-w-6xl mx-auto p-4 md:p-6 mt-32">
+      <CardTitle className="text-xl md:text-2xl font-bold mb-4 text-[#613213]">
         Prestations
       </CardTitle>
-      <div className="mt-6">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 gap-y-8">
+      <div className="mt-4 md:mt-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 gap-y-">
           {presta.map((prestas) => (
             <Card
               key={prestas.id}
@@ -32,7 +32,7 @@ export default function Prestation() {
             >
               <img
                 src={prestas.src}
-                className="w-full h-56 rounded-lg object-contain sm:object-cover  sm:h-64 "
+                className="w-full h-48 md:h-56 rounded-lg object-cover"
                 alt="Formats disponibles"
               />
               <div className="flex flex-col flex-1 mt-4">
@@ -58,9 +58,9 @@ export default function Prestation() {
                     >
                       Détails
                     </DialogTrigger>
-                    <DialogContent className="max-w-[90vw] max-h-[90vh] overflow-y-auto sm:max-w-3xl">
+                    <DialogContent className="max-w-[90vw] max-h-[90vh] overflow-y-auto md:max-w-3xl">
                       <DialogHeader>
-                        <DialogTitle className="text-[#613213] text-2xl font-bold mb-4">
+                        <DialogTitle className="text-[#613213] text-xl md:text-2xl font-bold mb-4">
                           {prestas.name}
                         </DialogTitle>
                         <div className="space-y-4">
@@ -116,7 +116,7 @@ export default function Prestation() {
                           </DialogDescription>
 
                           {prestas.contact && (
-                            <DialogDescription className="text-[#9e8b8b] flex flex-col gap-2 items-start sm:gap-6">
+                            <DialogDescription className="text-[#9e8b8b] flex flex-col gap-2 items-start md:gap-6">
                               {Array.isArray(prestas.contact) ? (
                                 prestas.contact.map((contact, index) => (
                                   <li key={index} className="list-none">
