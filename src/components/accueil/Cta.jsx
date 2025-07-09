@@ -31,6 +31,7 @@ export default function Cta() {
           <img
             className="w-full h-full object-cover rounded-lg shadow-2xl"
             src="./cta.png"
+            alt="un chien"
           />
         </div>
       </div>

@@ -24,7 +24,7 @@ export default function Prestation() {
         Prestations
       </CardTitle>
       <div className="mt-4 md:mt-6">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 gap-y-">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           {presta.map((prestas) => (
             <Card
               key={prestas.id}

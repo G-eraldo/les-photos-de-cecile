@@ -34,7 +34,7 @@ export default function Accueil() {
         Bienvenue
       </CardTitle>
       <div className="flex flex-col md:flex-row gap-6">
-        <div className="md:w-1/2 aspect-[3/4] md:aspect-[4/3] md:aspect-video overflow-hidden">
+        <div className="md:w-1/2 aspect-[3/4] md:aspect-video overflow-hidden">
           <div className="relative w-full h-full md:pt-10">
             <Carousel
               className="w-full h-full"

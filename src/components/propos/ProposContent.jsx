@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Card, CardContent, CardTitle } from "../ui/card";
 
 export default function ProposContent() {
@@ -7,11 +8,13 @@ export default function ProposContent() {
         Un petit bout de moi
       </CardTitle>
       <div className="flex flex-col md:flex-row gap-6">
-        <div className="w-full md:w-1/2 aspect-[3/4] md:aspect-[4/3] md:aspect-video">
-          <img
+        <div className="w-full md:w-1/2 aspect-[3/4] md:aspect-video">
+          <Image
             src="/profil.png"
-            className="w-full h-full object-cover object-center rounded-lg shadow-2xl"
+            className="w-full h-full object-cover object-top rounded-lg shadow-2xl"
             alt="Photo de profil"
+            width={500}
+            height={500}
           />
         </div>
         <CardContent className="w-full md:w-1/2 text-[#9e8b8b] leading-8 font-playfair py-4 md:py-8 text-base md:text-lg">

@@ -14,6 +14,7 @@ export default function Prestation() {
           <img
             className="w-full h-full object-cover object-top rounded-lg mt-5 shadow-2xl"
             src="./prestation.png"
+            alt="Séance de bain thérapeutique pour bébé"
           />
         </div>
         <CardContent className="w-full lg:w-1/2 text-[#9e8b8b] leading-8 font-playfair py-4 md:py-8 text-base md:text-lg">
