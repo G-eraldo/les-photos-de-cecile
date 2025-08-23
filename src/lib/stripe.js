@@ -2,6 +2,7 @@
 
 import { redirect } from "next/navigation";
 import Stripe from "stripe";
+import { getServerUrl } from "./server-url";
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
 
@@ -51,8 +52,8 @@ export async function createStripeCheckout(formData, imagePublicId) {
       adresse,
       franges,
     },
-    success_url: `${process.env.NEXT_PUBLIC_BASE_URL}/tirages-photo/commande?status=success`,
-    cancel_url: `${process.env.NEXT_PUBLIC_BASE_URL}/tirages-photo/commande?status=cancel&imagePublicId=${imagePublicId}`,
+    success_url: `${getServerUrl()}/tirages-photo/commande?status=success`,
+    cancel_url: `${getServerUrl()}/tirages-photo/commande?status=cancel&imagePublicId=${imagePublicId}`,
   });
 
   redirect(session.url);
