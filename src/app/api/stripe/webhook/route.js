@@ -23,65 +23,103 @@ export async function POST(req) {
     );
   }
 
-  // Paiement réussi
+  // // Paiement réussi
+  // if (event.type === "checkout.session.completed") {
+  //   const session = event.data.object;
+  //   try {
+  //     await resend.emails.send({
+  //       from: "onboarding@resend.dev",
+  //       to: "gerald-f@hotmail.fr",
+  //       subject: "Développement de photo",
+  //       text: `Bonjour, vous avez une nouvelle commande de developpement de la part de ${session.metadata.prenom}, liens vers la photo: https://console.cloudinary.com/app/c-7ac43c69e3a0bb774adfaf91a66f96/assets/media_library/folders/cb981666428978bb8f17845c1db81f5658?view_mode=list
+
+  // Paiement réussi pour la commande de ${session.metadata.prenom}.
+
+  // Montant: ${session.amount_total / 100}€
+  // Type: ${session.metadata.type || "Non spécifié"}
+  // Format: ${session.metadata.format || "Non spécifié"}
+  // Marge : ${session.metadata.marge || "Non spécifié"}
+  // Client: ${session.metadata.prenom} ${session.metadata.nom}
+  // Email: ${session.metadata.email}
+  // Image Public ID: ${session.metadata.imagePublicId}
+  // Adresse: ${session.metadata.adresse || "Non spécifié"}
+  // Franges: ${session.metadata.franges || "Non spécifié"} `,
+  //     });
+  //     console.log("Email envoyé à l'administrateur");
+  //     await resend.emails.send({
+  //       from: "onboarding@resend.dev",
+  //       to: session.metadata.email,
+  //       subject: "Votre commande de développement de photo",
+  //       html: `
+  //           <div style="font-family: Arial, sans-serif; color: #333;">
+  //             <h2 style="color: #613213;">Votre commande de développement de photo</h2>
+  //             <p>Bonjour <strong>${session.metadata.prenom}</strong>,</p>
+  //             <p>
+  //               Merci pour votre commande !<br>
+  //               Nous avons bien reçu votre demande de développement pour la photo&nbsp;:
+  //               <strong>${session.metadata.image}</strong>
+  //             </p>
+  //             <p>
+  //               <strong>Détails de la commande :</strong><br>
+  //               Format choisi : <strong>${session.metadata.format}</strong><br>
+  //               Montant total : <strong>${session.metadata.price} €</strong><br>
+  //               Marges : <strong>${session.metadata.marge}</strong>
+  //             </p>
+  //             <p>
+  //               Votre commande est en cours de traitement.<br>
+  //               Vous recevrez prochainement un email avec les informations de suivi ou de retrait.
+  //             </p>
+  //             <p>
+  //               Si vous avez la moindre question, n’hésitez pas à me contacter par retour de mail.
+  //             </p>
+  //             <p>
+  //               À très bientôt,<br>
+  //               <strong>Cécile</strong>
+  //             </p>
+  //           </div>
+  //         `,
+  //     });
+  //   } catch (error) {
+  //     console.error("Erreur lors de l'envoi d'email:", error);
+  //     return NextResponse.json(
+  //       { error: "Erreur lors du traitement post-paiement" },
+  //       { status: 500 }
+  //     );
+  //   }
+  // }
+
+  // ...existing code...
   if (event.type === "checkout.session.completed") {
     const session = event.data.object;
+    console.log("Métadonnées de la session:", session.metadata);
+    console.log("Email client:", session.metadata.email);
+
     try {
-      await resend.emails.send({
+      console.log("Début envoi email admin...");
+      const adminEmailResult = await resend.emails.send({
         from: "onboarding@resend.dev",
         to: "gerald-f@hotmail.fr",
         subject: "Développement de photo",
-        text: `Bonjour, vous avez une nouvelle commande de developpement de la part de ${session.metadata.prenom}, liens vers la photo: https://console.cloudinary.com/app/c-7ac43c69e3a0bb774adfaf91a66f96/assets/media_library/folders/cb981666428978bb8f17845c1db81f5658?view_mode=list
-
-Paiement réussi pour la commande de ${session.metadata.prenom}.
-
-Montant: ${session.amount_total / 100}€
-Type: ${session.metadata.type || "Non spécifié"}
-Format: ${session.metadata.format || "Non spécifié"}
-Marge : ${session.metadata.marge || "Non spécifié"} 
-Client: ${session.metadata.prenom} ${session.metadata.nom}
-Email: ${session.metadata.email}
-Image Public ID: ${session.metadata.imagePublicId}
-Adresse: ${session.metadata.adresse || "Non spécifié"}
-Franges: ${session.metadata.franges || "Non spécifié"} `,
+        text: `Bonjour, vous avez une nouvelle commande...`,
       });
-      await resend.emails.send({
+      console.log("Résultat envoi email admin:", adminEmailResult);
+
+      console.log("Début envoi email client...");
+      const clientEmailResult = await resend.emails.send({
         from: "onboarding@resend.dev",
         to: session.metadata.email,
         subject: "Votre commande de développement de photo",
-        html: `
-          <div style="font-family: Arial, sans-serif; color: #333;">
-            <h2 style="color: #613213;">Votre commande de développement de photo</h2>
-            <p>Bonjour <strong>${session.metadata.prenom}</strong>,</p>
-            <p>
-              Merci pour votre commande !<br>
-              Nous avons bien reçu votre demande de développement pour la photo&nbsp;:
-              <strong>${session.metadata.image}</strong>
-            </p>
-            <p>
-              <strong>Détails de la commande :</strong><br>
-              Format choisi : <strong>${session.metadata.format}</strong><br>
-              Montant total : <strong>${session.metadata.price} €</strong><br>
-              Marges : <strong>${session.metadata.marge}</strong>
-            </p>
-            <p>
-              Votre commande est en cours de traitement.<br>
-              Vous recevrez prochainement un email avec les informations de suivi ou de retrait.
-            </p>
-            <p>
-              Si vous avez la moindre question, n’hésitez pas à me contacter par retour de mail.
-            </p>
-            <p>
-              À très bientôt,<br>
-              <strong>Cécile</strong>
-            </p>
-          </div>
-        `,
+        html: `...`,
       });
+      console.log("Résultat envoi email client:", clientEmailResult);
     } catch (error) {
-      console.error("Erreur lors de l'envoi d'email:", error);
+      console.error("Détails de l'erreur:", {
+        message: error.message,
+        code: error.code,
+        response: error.response,
+      });
       return NextResponse.json(
-        { error: "Erreur lors du traitement post-paiement" },
+        { error: `Erreur envoi email: ${error.message}` },
         { status: 500 }
       );
     }
