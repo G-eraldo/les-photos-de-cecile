@@ -24,6 +24,15 @@ export default function PersonnalInfo() {
           placeholder="jean.dupont@example.com"
         />
       </div>
+      <div className="grid w-full items-center gap-2">
+        <Label htmlFor="adresse">Votre adresse</Label>
+        <Input
+          type="text"
+          id="adresse"
+          name="adresse"
+          placeholder="1 rue de l'eglise"
+        />
+      </div>
     </div>
   );
 }

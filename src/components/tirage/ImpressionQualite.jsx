@@ -8,7 +8,7 @@ import {
   CardTitle,
 } from "../ui/card";
 const presta = [
-  { name: "10x15", price: "8€" },
+  { name: "10x10 / 10x15", price: "8€" },
   { name: "13x18 / 15x15", price: "10€" },
   { name: "20x20 / 18x24 / A4 / 20x30", price: "17€" },
   { name: "30x30", price: "22€" },

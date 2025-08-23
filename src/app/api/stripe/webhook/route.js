@@ -41,7 +41,9 @@ Format: ${session.metadata.format || "Non spécifié"}
 Marge : ${session.metadata.marge || "Non spécifié"} 
 Client: ${session.metadata.prenom} ${session.metadata.nom}
 Email: ${session.metadata.email}
-Image Public ID: ${session.metadata.imagePublicId}`,
+Image Public ID: ${session.metadata.imagePublicId}
+Adresse: ${session.metadata.adresse || "Non spécifié"}
+Franges: ${session.metadata.franges || "Non spécifié"} `,
       });
       await resend.emails.send({
         from: "onboarding@resend.dev",

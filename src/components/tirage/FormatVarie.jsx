@@ -9,7 +9,7 @@ import {
 } from "../ui/card";
 
 const presta = [
-  { name: "10x15", price: "6€" },
+  { name: "10x10 / 10x15", price: "6€" },
   { name: "13x18 / 15x15", price: "8€" },
   { name: "20x20 / 18x24 / A4 / 20x30", price: "15€" },
   { name: "30x30", price: "20€" },

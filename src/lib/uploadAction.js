@@ -11,6 +11,7 @@ export async function submitPhotoForm(prevState, formData) {
   const nom = formData.get("nom");
   const prenom = formData.get("prenom");
   const email = formData.get("email");
+  
 
   if (!image || image.size === 0) {
     return {

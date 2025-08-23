@@ -14,7 +14,7 @@ import { useState } from "react";
 import { useFormStatus } from "react-dom";
 
 const varie = [
-  { name: "10x15", price: "6" },
+  { name: "10x10 / 10x15", price: "6" },
   { name: "13x18 / 15x15", price: "8" },
   { name: "20x20 / 18x24 / A4 / 20x30", price: "15" },
   { name: "30x30", price: "20" },
@@ -23,7 +23,7 @@ const varie = [
 ];
 
 const qualite = [
-  { name: "10x15", price: "8" },
+  { name: "10x10 / 10x15", price: "8€" },
   { name: "13x18 / 15x15", price: "10" },
   { name: "20x20 / 18x24 / A4 / 20x30", price: "17" },
   { name: "30x30", price: "22" },
@@ -36,12 +36,16 @@ export default function CommandeInfo() {
   const [type, setType] = useState("");
   const [format, setFormat] = useState("");
   const [price, setPrice] = useState("");
+  const [franges, setFranges] = useState("");
+
   const formats =
     type === "formats-varies"
       ? varie
       : type === "impression-qualite"
         ? qualite
         : [];
+
+  const prices = franges === "avec-franges" ? parseFloat(price) + 0.5 : price;
 
   // Lorsqu'on choisit un format, on retrouve l'objet complet pour en extraire le prix
   function handleFormatChange(selectedName) {
@@ -105,6 +109,22 @@ export default function CommandeInfo() {
           </Select>
         </div>
         <div className="grid w-full items-center gap-2">
+          <Label htmlFor="franges">Franges</Label>
+          <Select name="franges" onValueChange={setFranges}>
+            <SelectTrigger className="w-full">
+              <SelectValue placeholder="Choisir" />
+            </SelectTrigger>
+            <SelectContent>
+              <SelectItem value="avec-franges">
+                Avec franges (+ 0,50€)
+              </SelectItem>
+              <SelectItem value="sans-franges">Sans marges</SelectItem>
+            </SelectContent>
+          </Select>
+        </div>
+      </div>
+      <div className="grid md:grid-cols-2 gap-4 justify-center">
+        <div className="grid w-full items-center gap-2">
           <Label htmlFor="image">Photo</Label>
           <Input
             id="image"
@@ -114,16 +134,16 @@ export default function CommandeInfo() {
             required
           />
         </div>
-      </div>
-      <input type="hidden" name="price" value={price} />
-      <div className="mt-6 flex justify-center md:justify-start">
-        <Button className="w-full md:w-auto" type="submit" disabled={pending}>
-          {pending
-            ? "Envoi en cours..."
-            : price === ""
-              ? "Payer"
-              : `Payer ${price} €`}
-        </Button>
+        <input type="hidden" name="prices" value={prices} />
+        <div className="grid w-full items-center gap-2 mt-5">
+          <Button className="w-full md:w-auto" type="submit" disabled={pending}>
+            {pending
+              ? "Envoi en cours..."
+              : prices === ""
+                ? "Payer"
+                : `Payer ${prices} €`}
+          </Button>
+        </div>
       </div>
     </div>
   );

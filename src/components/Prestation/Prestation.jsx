@@ -15,7 +15,6 @@ import { presta } from "@/lib/dataPresta";
 import { cn } from "@/lib/utils";
 import { Mail } from "lucide-react";
 import Link from "next/link";
-import Reservation from "./Reservation";
 
 export default function Prestation() {
   return (
@@ -96,6 +95,17 @@ export default function Prestation() {
                                 </DialogDescription>
                               ))}
                           </div>
+                          <div className="grid grid-cols-3 gap-2 text-center">
+                            {prestas.forfait3 &&
+                              prestas.forfait3.map((forfait) => (
+                                <DialogDescription
+                                  key={forfait}
+                                  className="text-[#9e8b8b] border-r-2 font-medium"
+                                >
+                                  {forfait}
+                                </DialogDescription>
+                              ))}
+                          </div>
                           <DialogDescription
                             className={cn(
                               "text-[#9e8b8b]",
@@ -103,17 +113,7 @@ export default function Prestation() {
                                 prestas.forfait2.length > 0 &&
                                 "border-t-2 pt-4"
                             )}
-                          >
-                            {prestas.restriction &&
-                              prestas.restriction.map((restriction) => (
-                                <li
-                                  className="pb-2 list-none sm:pb-3"
-                                  key={restriction}
-                                >
-                                  {restriction}
-                                </li>
-                              ))}
-                          </DialogDescription>
+                          ></DialogDescription>
 
                           {prestas.contact && (
                             <DialogDescription className="text-[#9e8b8b] flex flex-col gap-2 items-start md:gap-6">
@@ -134,11 +134,6 @@ export default function Prestation() {
                               </Button>
                             </DialogDescription>
                           )}
-
-                          {prestas.restriction &&
-                          prestas.restriction.length > 0 ? (
-                            <Reservation />
-                          ) : null}
                         </div>
                       </DialogHeader>
 

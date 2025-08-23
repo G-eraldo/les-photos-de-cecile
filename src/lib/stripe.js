@@ -8,14 +8,17 @@ const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
 export async function createStripeCheckout(formData, imagePublicId) {
   const type = formData.get("type");
   const formatName = formData.get("format");
-  const price = formData.get("price");
+  const price = formData.get("prices");
   const image = formData.get("image");
   const nom = formData.get("nom");
   const prenom = formData.get("prenom");
   const email = formData.get("email");
   const marge = formData.get("marge");
+  const adresse = formData.get("adresse");
+  const franges = formData.get("franges");
 
   const unitAmount = parseInt(price, 10) * 100;
+  const finalAmount = franges === "avec-franges" ? unitAmount + 50 : unitAmount;
 
   const session = await stripe.checkout.sessions.create({
     payment_method_types: ["card"],
@@ -30,7 +33,7 @@ export async function createStripeCheckout(formData, imagePublicId) {
                 ? "Tirage format varié"
                 : "tirage impression qualité",
           },
-          unit_amount: unitAmount,
+          unit_amount: finalAmount,
         },
         quantity: 1,
       },
@@ -45,6 +48,8 @@ export async function createStripeCheckout(formData, imagePublicId) {
       prenom,
       email,
       marge,
+      adresse,
+      franges,
     },
     success_url: `${process.env.NEXT_PUBLIC_BASE_URL}/tirages-photo/commande?status=success`,
     cancel_url: `${process.env.NEXT_PUBLIC_BASE_URL}/tirages-photo/commande?status=cancel&imagePublicId=${imagePublicId}`,
