@@ -8,7 +8,7 @@ import { useEffect, useRef, useState } from "react";
 export default function Maps() {
   const mapContainer = useRef(null);
   const map = useRef(null);
-  const center = { lng: 2.430251, lat: 49.718112 };
+  const center = { lng: 2.275627, lat: 49.897287 };
   const [zoom] = useState(14);
 
   // Définir une icône personnalisée pour le marqueur

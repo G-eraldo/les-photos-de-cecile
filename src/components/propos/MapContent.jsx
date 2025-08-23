@@ -30,7 +30,7 @@ export default function MapContent() {
                 Les photos de Cécile
               </p>
               <p className="hover:text-[#613213] transition-colors duration-300">
-                27b Grande rue, 80250 THORY France
+                8 allée sablée 80000 Amiens
               </p>
             </div>
           </div>
