@@ -96,7 +96,7 @@ export default function Footer() {
         <span className="block text-center text-sm text-[#9e8b8b]">
           {" "}
           © {new Date().getFullYear()} Les photos de Cécile, tous droits
-          réservés - site édité par Gerald
+          réservés - site édité par La fabrique du web
         </span>
       </div>
     </footer>
