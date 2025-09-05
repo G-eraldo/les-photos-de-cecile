@@ -1,0 +1,13 @@
+# *
+User-agent: *
+Allow: /
+
+# Googlebot
+User-agent: Googlebot
+Disallow: /tirages-photo/*
+
+# Host
+Host: https://les-photos-de-cecile-l7f5.vercel.app/
+
+# Sitemaps
+Sitemap: https://les-photos-de-cecile-l7f5.vercel.app/sitemap.xml
