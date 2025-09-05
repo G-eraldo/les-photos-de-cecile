@@ -8,6 +8,15 @@ export async function submitForm(prevState, formData) {
     const email = formData.get("email");
     const message = formData.get("message");
 
+    // Vérification de la longueur minimale du message
+    if (message && message.trim().length < 5) {
+      return {
+        success: false,
+        message:
+          "Votre message est trop court. Veuillez écrire un message plus détaillé.",
+      };
+    }
+
     await resend.emails.send({
       from: "onboarding@resend.dev",
       to: "gerald-f@hotmail.fr",

@@ -6,7 +6,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { submitForm } from "@/lib/sendEmail";
-import { useActionState, useEffect } from "react";
+import { useActionState, useEffect, useState } from "react";
 import { useFormStatus } from "react-dom";
 import { toast } from "sonner";
 
@@ -27,6 +27,8 @@ function SubmitButton() {
 
 export default function Formcontent() {
   const [state, formAction] = useActionState(submitForm, initialState);
+  const [messageError, setMessageError] = useState("");
+  
   useEffect(() => {
     if (state.message) {
       if (state.success) {
@@ -36,6 +38,19 @@ export default function Formcontent() {
       }
     }
   }, [state]); // Exécuter l'effet uniquement lorsque l'état change
+  
+  // Fonction pour valider le formulaire avant soumission
+  const validateAndSubmit = (formData) => {
+    const message = formData.get("message");
+    
+    if (!message || message.trim().length < 2) {
+      setMessageError("Votre message est trop court. Veuillez écrire un message plus détaillé.");
+      return false;
+    }
+    
+    setMessageError("");
+    return formAction(formData);
+  };
 
   return (
     <Card className="max-w-2xl mx-auto p-4 md:p-6 mt-32">
@@ -47,7 +62,7 @@ export default function Formcontent() {
         répondre rapidement.
       </CardDescription>
       <form
-        action={formAction}
+        action={validateAndSubmit}
         className="space-y-4 md:space-y-6 text-[#9e8b8b]"
       >
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -71,10 +86,15 @@ export default function Formcontent() {
         <div className="grid w-full gap-2">
           <Label htmlFor="message">Votre message</Label>
           <Textarea
+            required
             placeholder="Écrivez votre message ici..."
             name="message"
-            className="min-h-[150px]"
+            className={`min-h-[150px] ${messageError ? "border-red-500" : ""}`}
+            onChange={() => setMessageError("")}
           />
+          {messageError && (
+            <p className="text-red-500 text-sm mt-1">{messageError}</p>
+          )}
         </div>
         <div className="flex justify-center">
           <SubmitButton />
